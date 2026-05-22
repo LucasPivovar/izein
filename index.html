@@ -8,7 +8,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
+    <style>
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .logo-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            .clipped-title-svg {
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            .page-container {
+                padding: 1rem 1.2rem 1.5rem 1.2rem !important;
+                margin-top: 0 !important;
+                gap: 1.5rem !important;
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .contacts-section {
+                margin-top: 0.5rem !important;
+                max-width: 100% !important;
+            }
+            .contacts-grid {
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                align-items: flex-start !important;
+                gap: 1.5rem 1rem !important;
+                padding: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .contact-card {
+                width: calc(50% - 0.5rem) !important;
+                min-width: 0 !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -53,7 +97,12 @@
             </div>
         </header>
 
-        <!-- Acesso direto aos contatos -->
+        <!-- Aviso: Site em construção (visível apenas no mobile) -->
+        <div class="construction-notice">
+            <p class="construction-bold">Site em construção.</p>
+            <p class="construction-normal">Fale com a gente através</p>
+            <p class="construction-normal">dos contatos abaixo.</p>
+        </div>
 
         <!-- Grade/Linha de Contatos -->
         <section class="contacts-section">

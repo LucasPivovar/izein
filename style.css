@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -16,7 +21,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #0a1631;
     /* Azul Marinho Escuro */
-    overflow-x: hidden;
     position: relative;
     background-color: #f7f6f2;
     /* Fundo quente esbranquiçado */
@@ -59,9 +63,9 @@ body::before {
     flex-grow: 1;
     width: 100%;
     max-width: 1400px;
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 0rem 2rem 2rem 2rem;
     text-align: center;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 /* ==========================================================================
@@ -71,7 +75,6 @@ body::before {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
 }
 
 /* ==========================================================================
@@ -184,6 +187,31 @@ body::before {
 
 
 /* ==========================================================================
+   Aviso de Site em Construção (mobile only)
+   ========================================================================== */
+.construction-notice {
+    display: none; /* oculto por padrão no desktop */
+    text-align: center;
+    line-height: 1.7;
+}
+
+.construction-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #0a1631;
+}
+
+.construction-normal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #0a1631;
+}
+
+/* ==========================================================================
    Grade de Contatos
    ========================================================================== */
 .contacts-section {
@@ -293,36 +321,107 @@ body::before {
 }
 
 /* Dispositivos Móveis Pequenos */
-@media (max-width: 550px) {
+@media (max-width: 768px) {
+
     /* Espelha o fundo horizontalmente no mobile */
     body::before {
         transform: scaleX(-1);
     }
 
-    .page-container {
-        padding: 3rem 1.2rem 1.5rem 1.2rem;
-        gap: 2.5rem;
+    /* Logo no mobile */
+    .brand-logo-img {
+        max-height: 170px;
+        margin-bottom: 0.2rem;
     }
 
+    /* Exibe o aviso de construção no mobile */
+    .construction-notice {
+        display: block;
+    }
+
+    /* Fontes do bloco de construção */
+    .construction-bold {
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+
+    .construction-normal {
+        font-size: 0.95rem;
+        font-weight: 400;
+    }
+
+    /* "que se sente" no mobile */
+    .subtitle {
+        font-size: clamp(2.2rem, 9.5vw, 3rem);
+        margin-top: -0.8rem;
+        letter-spacing: 0.12em;
+    }
+
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .logo-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .clipped-title-svg {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .page-container {
+        padding: 1rem 1.2rem 1.5rem 1.2rem !important;
+        margin-top: 0 !important;
+        gap: 1.5rem !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Reduz espaço em cima dos contatos */
+    .contacts-section {
+        margin-top: 0.5rem !important;
+        max-width: 100% !important;
+    }
+
+    /* Contatos: grid 2x2 */
     .contacts-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 1.5rem 1rem !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .contact-card {
-        width: 100%;
+        width: calc(50% - 0.5rem);
+        min-width: 0;
     }
 
     .icon-wrapper {
-        margin-bottom: 0.8rem;
-        width: 56px;
-        height: 56px;
+        margin-bottom: 0.5rem;
+        width: 44px;
+        height: 44px;
     }
 
     .icon-wrapper svg {
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Fonte dos labels dos contatos no mobile */
+    .contact-label {
+        font-size: 0.82rem;
+        line-height: 1.3;
+        word-break: break-word; /* Evita que o email quebre a tela */
     }
 
     .footer-bar {
