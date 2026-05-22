@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izein - Qualidade que se sente</title>
+    <!-- Google Fonts: Montserrat (Thin, Light, Regular, Semi-Bold, Bold, Black + Italics) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page-container">
+        <!-- Seção do Logotipo/Letreiro "QUALIDADE" -->
+        <header class="header-section">
+            <div class="logo-wrapper">
+                <!-- Logo Izein -->
+                <img src="logo.png" class="brand-logo-img" alt="iZEiN Uniformes" />
+                <svg viewBox="0 0 1600 320" class="clipped-title-svg">
+                    <defs>
+                        <clipPath id="qualidade-clip">
+                            <text x="50%" y="250" font-family="'Montserrat', sans-serif" font-size="254" font-weight="900" font-style="italic" text-anchor="middle" letter-spacing="-5">QUALIDADE</text>
+                        </clipPath>
+                        
+                        <!-- Degradê suave para a borda esquerda da foto 2 (transição suave com a foto 1) -->
+                        <linearGradient id="grad-img2" x1="300" y1="0" x2="360" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="white" stop-opacity="0" />
+                            <stop offset="100%" stop-color="white" stop-opacity="1" />
+                        </linearGradient>
+                        <mask id="mask-img2">
+                            <rect x="0" y="-100" width="1600" height="500" fill="url(#grad-img2)" />
+                        </mask>
+                    </defs>
+
+                    <g clip-path="url(#qualidade-clip)">
+                        <!-- img6: x=1380 -->
+                        <image href="ims/img6.png" x="1380" y="-15" width="370" height="350" preserveAspectRatio="xMinYMid slice" />
+                        <!-- img4: x=730 — base do meio-direita -->
+                        <image href="ims/img4.png" x="730" y="-10" width="480" height="340" preserveAspectRatio="xMinYMid slice" />
+                        <!-- img5: x=1038, y=-40 — acima da img4 -->
+                        <image href="ims/img5.png" x="1038" y="-40" width="400" height="350" preserveAspectRatio="xMinYMid slice" />
+                        <!-- img3: x=360 — movida para a esquerda para revelar mais da img4 -->
+                        <image href="ims/img3.png" x="360" y="-15" width="480" height="350" preserveAspectRatio="xMinYMid slice" />
+                        <!-- img1: x=-120 — movida mais para a esquerda para ocupar mais espaço -->
+                        <image href="ims/img1.png" x="-120" y="10" width="600" height="340" preserveAspectRatio="xMinYMid slice" />
+                        <!-- img2: com máscara para transição suave com a img1 -->
+                        <image href="ims/img2.png" x="300" y="-10" width="280" height="340" preserveAspectRatio="xMinYMid slice" mask="url(#mask-img2)" />
+                    </g>
+                </svg>
+                <p class="subtitle">que se sente</p>
+            </div>
+        </header>
+
+        <!-- Acesso direto aos contatos -->
+
+        <!-- Grade/Linha de Contatos -->
+        <section class="contacts-section">
+            <div class="contacts-grid">
+                
+                <!-- Telefone -->
+                <a href="tel:3432260445" class="contact-card" id="contact-phone">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path fill="currentColor" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            <path d="M14.05 2a9 9 0 0 1 8 8" />
+                            <path d="M14.05 6a5 5 0 0 1 4 4" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">(34) 3226-0445</span>
+                </a>
+
+                <!-- E-mail -->
+                <a href="mailto:comercial@izein.com.br" class="contact-card" id="contact-email">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 8h4M1 12h5M3 16h3" />
+                            <rect x="8" y="6" width="14" height="11" rx="1.5" />
+                            <path d="m8 8 7 4.5 7-4.5" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">comercial@izein.com.br</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/uniformesizein" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-instagram">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">@uniformesizein</span>
+                </a>
+
+                <!-- Website -->
+                <a href="https://www.izein.com.br" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-web">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="9" />
+                            <line x1="2" y1="11" x2="20" y2="11" />
+                            <path d="M11 2a15.3 15.3 0 0 1 4 9 15.3 15.3 0 0 1-4 9 15.3 15.3 0 0 1-4-9 15.3 15.3 0 0 1 4-9z" />
+                            <path d="m16 16 3 6 1.5-1.5 2.5 2.5 1-1-2.5-2.5 1.5-1.5-6-3z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <span class="contact-label">www.izein.com.br</span>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Barra de Rodapé -->
+    <footer class="footer-bar">
+        <address class="footer-address">Rua Atenas, 50, Tibery - Uberlândia/MG - CEP: 38405-066</address>
+    </footer>
+
+</body>
+</html>

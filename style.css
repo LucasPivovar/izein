@@ -1,0 +1,331 @@
+/* ==========================================================================
+   Estilos Base e Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #0a1631;
+    /* Azul Marinho Escuro */
+    overflow-x: hidden;
+    position: relative;
+    background-color: #f7f6f2;
+    /* Fundo quente esbranquiçado */
+}
+
+/* ==========================================================================
+   Textura de Tecido Realista (Procedural)
+   ========================================================================== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #f7f6f2;
+    /* Mesclagem de textura de linho microscópica com a foto real da onda de tecido do PSD */
+    background-image:
+        linear-gradient(90deg, rgba(0, 12, 36, 0.007) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 12, 36, 0.007) 1px, transparent 1px),
+        url('ims/bg.png');
+    background-size: 3px 3px, 3px 3px, cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.97;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Container Principal da Página
+   ========================================================================== */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1400px;
+    padding: 3rem 2rem 2rem 2rem;
+    text-align: center;
+    gap: 3.5rem;
+}
+
+/* ==========================================================================
+   Seção Cabeçalho / Letreiro "QUALIDADE"
+   ========================================================================== */
+.header-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Detalhes de Costura e Vestuário Realistas (Estilo Roupa)
+   ========================================================================== */
+.clothing-label {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    background: #00092a;
+    color: #fff;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 3px 5px 15px rgba(0, 9, 42, 0.2);
+    border-left: 3px solid #ff3b30;
+    /* Vermelho Izein */
+    z-index: 1000;
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-radius: 1px;
+}
+
+.clothing-label::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #f7f6f2;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.clothing-label:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.clothing-label .brand {
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.clothing-label .desc {
+    font-size: 7.5px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ==========================================================================
+   Logo da Marca (logo.png)
+   ========================================================================== */
+.brand-logo-img {
+    display: block;
+    height: auto;
+    max-height: 260px;
+    width: auto;
+    margin: 0 auto -1rem auto;
+    object-fit: contain;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Efeito de recorte das fotos nas letras de "QUALIDADE" usando SVG ClipPath responsivo */
+.clipped-title-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    /* Garante que nenhuma borda de letra seja cortada */
+    filter: drop-shadow(0 4px 20px rgba(0, 12, 36, 0.03));
+    /* Profundidade sutil premium */
+}
+
+/* Subtítulo "que se sente" */
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    /* Light (weight 300) para ficar um pouco mais grosso */
+    font-style: italic;
+    font-size: clamp(1.5rem, 6.4vw, 115px);
+    /* Máximo de 141px do PSD, responsivo */
+    letter-spacing: 0.177em;
+    /* Equivalente a 25px em 141px de fonte (25/141 = 0.177) */
+    line-height: 0.84;
+    /* Equivalente a 118px de entrelinhas em 141px de fonte (118/141 = 0.84) */
+    color: #00092a;
+    opacity: 0.502;
+    /* Opacidade exata de 50.2% */
+    text-transform: lowercase;
+    margin-top: -3.5rem;
+    margin-right: -0.177em;
+    /* Compensa o letter-spacing na direita para manter centralizado milimetricamente */
+    width: 100%;
+}
+
+
+
+/* ==========================================================================
+   Grade de Contatos
+   ========================================================================== */
+.contacts-section {
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 4rem;
+    z-index: 10;
+}
+
+.contacts-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 5rem;
+}
+
+/* Cada card de contato individual */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #00092a;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    color: #00092a;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-wrapper svg {
+    width: 48px;
+    height: 48px;
+    stroke: #00092a;
+    transition: stroke 0.3s ease;
+}
+
+.contact-label {
+    font-size: clamp(1.1rem, 1.8vw, 25px);
+    /* Escala responsiva até 25px do PSD */
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0px;
+    color: #00092a;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    word-break: normal;
+    line-height: 28px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+/* Removido os efeitos de hover a pedido do usuário */
+
+/* ==========================================================================
+   Barra de Rodapé
+   ========================================================================== */
+.footer-bar {
+    width: 100%;
+    background-color: #07122a;
+    /* Azul marinho muito escuro */
+    padding: 1.4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
+    /* Garante que o rodapé fique sempre na parte inferior */
+}
+
+.footer-address {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    color: #cfd8e3;
+    /* Cinza claro elegante */
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Media Queries para Responsividade Extrema
+   ========================================================================== */
+
+/* Telas Médias e Pequenas (Tablets e Mobiles) */
+@media (max-width: 900px) {
+    .contacts-grid {
+        gap: 2.5rem;
+    }
+
+    .contact-card {
+        width: calc(50% - 1.5rem);
+        min-width: 220px;
+    }
+}
+
+/* Dispositivos Móveis Pequenos */
+@media (max-width: 550px) {
+    /* Espelha o fundo horizontalmente no mobile */
+    body::before {
+        transform: scaleX(-1);
+    }
+
+    .page-container {
+        padding: 3rem 1.2rem 1.5rem 1.2rem;
+        gap: 2.5rem;
+    }
+
+    .contacts-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+
+    .icon-wrapper {
+        margin-bottom: 0.8rem;
+        width: 56px;
+        height: 56px;
+    }
+
+    .icon-wrapper svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-bar {
+        padding: 1.2rem 1rem;
+    }
+}
